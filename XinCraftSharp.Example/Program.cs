@@ -1,7 +1,7 @@
 ﻿using System;
 using XinCraftSharp.Core;
+using XinCraftSharp.Endpoints.Player;
 using XinCraftSharp.Example.Utils;
-using XinCraftSharp.Player;
 
 XinCraftApi api = new(ConsoleUtils.RequestInput("Please input your API key."));
 

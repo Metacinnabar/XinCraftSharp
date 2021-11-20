@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using XinCraftSharp.Core;
 
-namespace XinCraftSharp.Player
+namespace XinCraftSharp.Endpoints.Player
 {
     public struct UserInfo : IApiObject
     {

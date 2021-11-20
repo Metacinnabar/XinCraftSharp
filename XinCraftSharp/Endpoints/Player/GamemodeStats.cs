@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace XinCraftSharp.Player
+namespace XinCraftSharp.Endpoints.Player
 {
     public struct GamemodeStats
     {
