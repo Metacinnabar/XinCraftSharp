@@ -4,6 +4,9 @@ using XinCraftSharp.Core;
 
 namespace XinCraftSharp.Endpoints.Player
 {
+    /// <summary>
+    /// UserInfo object returned when querying the /player endpoint.
+    /// </summary>
     public struct UserInfo : IApiObject
     {
         [JsonProperty("uuid")]
@@ -18,8 +21,9 @@ namespace XinCraftSharp.Endpoints.Player
         [JsonProperty("rankcolor")]
         public string RankColor { get; set; }
 
+        // Supposed to be hidden - Raymond
         [JsonProperty("tokens")]
-        public double Tokens { get; set; }
+        private double Tokens { get; set; }
 
         [JsonProperty("stats")]
         public PlayerStats Stats { get; set; }

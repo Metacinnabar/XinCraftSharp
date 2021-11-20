@@ -26,7 +26,6 @@ if (userInfoResponse.Success)
     Console.WriteLine(username + "'s uuid (with dashes): " + userInfo.Uuid);
     Console.WriteLine(username + "'s title: " + userInfo.Title);
     Console.WriteLine(username + "'s rank + color: " + userInfo.RankColor);
-    Console.WriteLine(username + "'s token count: " + userInfo.Tokens);
     
     // Print the best winstreaks from the provided username for each gamemode, as well as overall.
     Console.WriteLine(username + "'s best overall winstreak: " + userInfo.Stats.Overall.BestWinstreak);

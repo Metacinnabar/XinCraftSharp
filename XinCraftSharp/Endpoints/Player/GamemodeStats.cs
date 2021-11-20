@@ -2,6 +2,9 @@ using Newtonsoft.Json;
 
 namespace XinCraftSharp.Endpoints.Player
 {
+    /// <summary>
+    /// Struct for statistics such as overall, solos, doubles, threes and fours.
+    /// </summary>
     public struct GamemodeStats
     {
         [JsonProperty("wins")]
