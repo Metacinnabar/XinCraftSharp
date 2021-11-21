@@ -7,7 +7,7 @@
 ![GitHub license](https://img.shields.io/github/license/Metacinnabar/xincraftsharp)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Metacinnabar/xincraftsharp)
 
-**An API wrapper for the [XinCraft public API](https://github.com/XinCraft/docs), written in C# .NET 6.**
+**An API wrapper for the [XinCraft public API](https://github.com/XinCraft/docs), written in C# .NET 5, compatible with .NET 5+.**
 - If you found **XinCraftSharp** helpful or neat please consider leaving a star ⭐
 
 ## Documentation     
