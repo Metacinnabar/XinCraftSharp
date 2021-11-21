@@ -8,7 +8,6 @@ using XinCraftSharp.Endpoints.Player;
 
 namespace XinCraftSharp.Core
 {
-
     /// <summary>
     /// Main API class where endpoints are accessed from.
     /// </summary>
