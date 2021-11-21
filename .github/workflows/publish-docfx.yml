@@ -3,7 +3,7 @@ name: Public DocFX
 on:
   - push
   - pull_request
-  
+
 jobs:
   publish-docfx:
     runs-on: ubuntu-latest
