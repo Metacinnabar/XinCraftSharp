@@ -23,6 +23,12 @@ namespace XinCraftSharp.Core
         /// </summary>
         private readonly HttpClient client;
 
+        /// <summary>
+        /// An automatically-created <see cref="RequestBucket"/> attributed to this object instance. <br />
+        /// Handles ratelimiting, it is unwise to instantiate a second instance in order to attempt to bypass this.
+        /// </summary>
+        public RequestBucket Bucket { get; }
+
         public XinCraftApi(string apiKey)
         {
             // Initialise the HttpClient.
@@ -32,6 +38,14 @@ namespace XinCraftSharp.Core
             client.DefaultRequestHeaders.UserAgent.Add(userAgent);
             // Add the API key header to each request.
             client.DefaultRequestHeaders.Add("xincraft-api", apiKey);
+
+            // Start count-down upon object creation.
+            Bucket = new RequestBucket(
+                100,
+                100,
+                TimeSpan.FromMinutes(1),
+                DateTime.UtcNow.Add(TimeSpan.FromMinutes(1))
+            );
         }
 
         /// <summary>
@@ -65,6 +79,9 @@ namespace XinCraftSharp.Core
         /// <returns>Returns an API response object of the provided type.</returns>
         private async Task<ApiResponse<T>> GetFromEndpoint<T>(string endpoint, bool debug = false) where T : IApiObject
         {
+            // Acquire from the bucket. Pauses and waits if ratelimited.
+            await Bucket.Acquire();
+
             // Create a local variable to ease grabbing the url.
             string url = BaseUrl + endpoint;
             
@@ -79,9 +96,13 @@ namespace XinCraftSharp.Core
                 foreach (var (key, value) in client.DefaultRequestHeaders)
                     Console.WriteLine("[query] " + key + ": " + value.First());
             }
+
+            // Send request to the client and parse the headers for ratelimiting.
+            using HttpResponseMessage response = await client.GetAsync(url);
+            await Bucket.ParseHeaders(response.Headers);
             
             // Query the endpoint and assign the API response to a local variable.
-            string json = await client.GetStringAsync(url);
+            string json = await response.Content.ReadAsStringAsync();
             // Return a parsed JSON string into our provided type argument.
             return JsonConvert.DeserializeObject<ApiResponse<T>>(json);
         }

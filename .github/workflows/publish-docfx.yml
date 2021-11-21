@@ -1,0 +1,20 @@
+name: publish docfx
+on:
+  - push
+
+jobs:
+  publish-docfx:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    - uses: nikeee/docfx-action@v1.0.0
+      name: build docfx
+      with:
+        args: docs/docfx.json
+
+    - uses: maxheld83/ghpages@master
+      name: publish to github pages
+      env:
+        BUILD_DIR: docs/site
+        GH_PAT: ${{ secrets.GH_PAT }}
