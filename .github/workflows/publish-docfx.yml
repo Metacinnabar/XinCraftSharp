@@ -9,6 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and publish documentation
     steps:
+    - uses: actions/checkout@master
+    - name: Copy README
+      uses: canastro/copy-file-action@master
+      with:
+        source: "README.md"
+        target: "docs/index.md"
+
     - uses: actions/checkout@v1
     # Build site with updated code
     - uses: nikeee/docfx-action@v1.0.0
