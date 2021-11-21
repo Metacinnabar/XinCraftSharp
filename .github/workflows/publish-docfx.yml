@@ -7,13 +7,15 @@ on:
 jobs:
   publish-docfx:
     runs-on: ubuntu-latest
-    name: Build and publish documentation
+    
     steps:
     - uses: actions/checkout@v1
     - run: cp README.md docs/index.md
-    
-    # Build site with updated code
-    - uses: actions/checkout@v1
+
+    - uses: ad-m/github-push-action@v0.6.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
     - uses: nikeee/docfx-action@v1.0.0
       name: Build Documentation
       with:
