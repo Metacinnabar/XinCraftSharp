@@ -1,4 +1,4 @@
-name: Public DocFX
+name: publish docfx
 
 on:
   - push
@@ -10,7 +10,7 @@ jobs:
     name: Build and publish documentation
     steps:
     - uses: actions/checkout@v1
-    - run: mv README.md docs/index.md
+    - run: cp README.md docs/index.md
     
     # Build site with updated code
     - uses: actions/checkout@v1
