@@ -1,7 +1,7 @@
 ﻿using System;
 using XinCraftSharp.Core;
 using XinCraftSharp.Endpoints.Player;
-using XinCraftSharp.Example.Utils;
+using XinCraftSharp.Example.Utilities;
 
 // Initialise our own API object with the inputted key requested to console.
 // We use our own helper utility method here to reduce duplicate code.

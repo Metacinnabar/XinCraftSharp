@@ -1,7 +1,7 @@
 using System;
 using XinCraftSharp.Example.Exceptions;
 
-namespace XinCraftSharp.Example.Utils
+namespace XinCraftSharp.Example.Utilities
 {
     /// <summary>
     /// Utility class for console related helper methods.
