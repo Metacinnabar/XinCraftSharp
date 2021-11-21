@@ -11,7 +11,7 @@
 - If you found **XinCraftSharp** helpful or neat please consider leaving a star ⭐
 
 ## Documentation     
-Documentation can be found at the [docfx page](https://metacinna.bar/xincraftsharp/api).
+Documentation can be found at the [docfx page](https://pages.metacinna.bar/XinCraftSharp/api/index.html).
 
 ## Contributing
 Code contributions are welcomed, as well as any improvements and fixes.  
