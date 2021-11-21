@@ -1,6 +1,7 @@
 # [XinCraftSharp](https://github.com/Metacinnabar/XinCraftSharp) 
 [![wakatime](https://wakatime.com/badge/github/Metacinnabar/XinCraftSharp.svg)](https://wakatime.com/badge/github/Metacinnabar/XinCraftSharp)
 [![CodeFactor](https://www.codefactor.io/repository/github/metacinnabar/xincraftsharp/badge)](https://www.codefactor.io/repository/github/metacinnabar/xincraftsharp)
+[![Discord](https://img.shields.io/discord/635695428834164746?color=%235865F2)](https://discord.metacinna.bar)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Metacinnabar/xincraftsharp)
 ![Lines of code](https://img.shields.io/tokei/lines/github/Metacinnabar/xincraftsharp)
 ![GitHub license](https://img.shields.io/github/license/Metacinnabar/xincraftsharp)
